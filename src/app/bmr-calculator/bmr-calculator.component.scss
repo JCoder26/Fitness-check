@@ -1,0 +1,68 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+h1,
+h2,
+h3 {
+  margin: 10px 0;
+}
+
+.tdee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.tdee-table th,
+.tdee-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tdee-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tdee-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.highlight {
+  background-color: #ffeb3b; /* Highlight color for Sedentary */
+  font-weight: bold;
+}

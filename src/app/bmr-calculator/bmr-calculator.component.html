@@ -1,0 +1,66 @@
+<div class="container">
+  <h1>BMR Calculator</h1>
+  <form #bmrForm="ngForm" (ngSubmit)="calculateBMR()">
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" [(ngModel)]="gender" name="gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div>
+      <label for="weight">Weight (kg):</label>
+      <input
+        type="number"
+        id="weight"
+        [(ngModel)]="weight"
+        name="weight"
+        required
+        min="1"
+      />
+    </div>
+    <div>
+      <label for="height">Height (cm):</label>
+      <input
+        type="number"
+        id="height"
+        [(ngModel)]="height"
+        name="height"
+        required
+        min="1"
+      />
+    </div>
+    <div>
+      <label for="age">Age:</label>
+      <input
+        type="number"
+        id="age"
+        [(ngModel)]="age"
+        name="age"
+        required
+        min="1"
+      />
+    </div>
+    <button type="submit">Calculate BMR</button>
+  </form>
+
+  <div *ngIf="bmr !== null && tdee !== null">
+    <p>This calculations based on <b>Mifflin-St Jeor Formula</b></p>
+    <h2>Your BMR: {{ bmr | number: '1.0-0' }} calories/day</h2>
+    <h3>Total Daily Energy Expenditure (TDEE):</h3>
+    <table class="tdee-table">
+      <tr>
+        <th>Activity Level</th>
+        <th>Calories</th>
+      </tr>
+      <tr
+        *ngFor="let activity of getTdeeKeys()"
+        [class.highlight]="activity === 'Sedentary'"
+      >
+        <td>{{ activity }}</td>
+        <td>{{ tdee[activity] }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
